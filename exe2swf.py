@@ -36,8 +36,11 @@ def list_all(path):
 
 if __name__ == "__main__":
     path=os.path.split(os.path.realpath(__file__))
-    lexe=list_all(path)
+    lexe=list_all(path[0])
     nots,dones=exe2swf(lexe)
+    
     if input('需要删除已完成转换的exe文件吗？输入“yes”即可删除')=='yes':
         for i in dones:
             os.remove(i)
+            
+    print('任务完成！！！') 
